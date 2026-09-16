@@ -1,0 +1,28 @@
+<header class="navbar">
+  <div class="container navbar__inner">
+    <a routerLink="/" class="navbar__logo" (click)="cerrarMenu()">
+      <span class="navbar__logo-icon" aria-hidden="true">🌿</span>
+      <span>GreenTravel</span>
+    </a>
+
+    <button
+      class="navbar__toggle"
+      type="button"
+      (click)="toggleMenu()"
+      [attr.aria-expanded]="menuAbierto()"
+      aria-label="Abrir menú de navegación"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="navbar__links" [class.navbar__links--open]="menuAbierto()">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="cerrarMenu()">Inicio</a>
+      <a routerLink="/destinos" routerLinkActive="active" (click)="cerrarMenu()">Destinos</a>
+      <a routerLink="/reservas" routerLinkActive="active" (click)="cerrarMenu()">Reservas</a>
+      <a routerLink="/login" routerLinkActive="active" class="navbar__link-login" (click)="cerrarMenu()">Iniciar sesión</a>
+      <a routerLink="/registro" routerLinkActive="active" class="btn btn-primary navbar__cta" (click)="cerrarMenu()">Registrarse</a>
+    </nav>
+  </div>
+</header>
